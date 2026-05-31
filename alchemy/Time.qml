@@ -23,7 +23,7 @@ Singleton {
             running:true
             repeat:true
             onTriggered: {
-                timeproc.running = true
+                timeProc.running = true
             }
         }
 

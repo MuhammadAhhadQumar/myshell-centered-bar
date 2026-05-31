@@ -3,7 +3,9 @@ import QtQuick
 
 
 Rectangle {
-    anchors.left:parent.left; anchors.verticalCenter:parent.verticalCenter; anchors.leftMargin: 10
+  anchors.left:parent.left;
+  anchors.verticalCenter:parent.verticalCenter; 
+  anchors.leftMargin: 10
     color:Colors.background
     border.color:Colors.color0Light
     border.width:1

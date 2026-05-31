@@ -1,1 +1,0 @@
-/home/licht/.cache/wal/colors.qml

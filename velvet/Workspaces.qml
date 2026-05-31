@@ -3,8 +3,9 @@ import Quickshell.Hyprland
 import QtQuick
 Rectangle {
     anchors.centerIn: parent
+    //anchors.leftMargin: 10
     width:row.width + 25
-    height: row.height + 10
+    height: row.height + 8
     radius: 20
     border.color: Colors.color0Light
     border.width: 1
@@ -16,12 +17,14 @@ Rectangle {
         Repeater {
             model:10
             Rectangle {
-                property int workspaceId: index + 1
+              property int workspaceId: index + 1
+              property var ws: Hyprland.workspaces.values.find(w => w.id === workspaceId)
+              property bool hasWindows: ws !== undefined
                     property bool active: Hyprland.focusedWorkspace?.id === workspaceId
 
-                        width: active ? 45 : 35
-                        color: active ? Colors.foreground : Colors.color0Light
-                        height: 26
+                        width: active ? 25 : 20
+                        color: active ? Colors.foreground:"transparent"
+                        height: 20
                         radius: 20
                         Behavior on width {
                         NumberAnimation { duration: 200; easing.type: Easing.OutQuad }
@@ -32,8 +35,8 @@ Rectangle {
 
                 Text {
                     anchors.centerIn: parent
-                    text: workspaceId
-                    font.pixelSize: 14
+                    text:active ? "" :hasWindows ?"" : ''
+                    font.pixelSize: 12
                     font.family: "JetBrainsMono Nerd Font Propo"
                     color: active ? Colors.background : Colors.foreground
                     font.bold: active
