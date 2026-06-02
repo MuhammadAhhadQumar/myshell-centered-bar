@@ -21,8 +21,7 @@ Rectangle {
                     property var ws: Hyprland.workspaces.values.find(w => w.id === workspaceId)
                     property bool hasWindows: ws !== undefined
                         property bool active: Hyprland.focusedWorkspace?.id === workspaceId
-
-                            width: active ? 25 : 20
+                            width: active ? 35 : 20
                             color: active ? Colors.foreground:"transparent"
                             height: 20
                             radius: 20
