@@ -3,12 +3,9 @@ import Quickshell.Hyprland
 import QtQuick
 Rectangle {
     anchors.centerIn: parent
-    // anchors.leftMargin: 10
     width:row.width + 25
     height: row.height + 8
     radius: 20
-    // border.color: Colors.color0Light
-    // border.width: 1
     color: Colors.background
     Row {
         id:row
@@ -31,7 +28,6 @@ Rectangle {
                         Behavior on color {
                         ColorAnimation { duration: 200 }
                     }
-
                     Text {
                         anchors.centerIn: parent
                         text:active ? "" :hasWindows ?"" : ''
@@ -39,7 +35,6 @@ Rectangle {
                         font.family: "JetBrainsMono Nerd Font Propo"
                         color: active ? Colors.background : Colors.foreground
                         font.bold: active
-
                         Behavior on color {
                         ColorAnimation { duration: 200 }
                     }
